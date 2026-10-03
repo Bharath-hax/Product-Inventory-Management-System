@@ -1,0 +1,11 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: amihive-task1-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - amihive_task1_mongo:/data/db
+volumes:
+  amihive_task1_mongo:

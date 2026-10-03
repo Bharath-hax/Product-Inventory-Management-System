@@ -1,0 +1,3 @@
+import { Boxes, PackageCheck, TriangleAlert, Layers3 } from 'lucide-react'
+const items=[['totalProducts','Total products',Boxes],['activeProducts','Active products',PackageCheck],['lowStockProducts','Low stock',TriangleAlert],['totalStockUnits','Stock units',Layers3]]
+export default function Stats({data}){return <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{items.map(([k,l,Icon])=><div className="card rounded-3xl p-5" key={k}><div className="flex items-center justify-between"><div className="text-sm text-slate-400">{l}</div><div className="rounded-xl bg-white/5 p-2"><Icon size={19}/></div></div><div className="mt-4 text-3xl font-black">{data?.[k] ?? '—'}</div></div>)}</div>}
